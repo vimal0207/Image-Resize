@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <script async src="https://docs.opencv.org/4.5.4/opencv.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="main">
+        <div><b><h3>Resize Image</h3></b></div>
+        <div id="canvas-div">
+            <canvas id="input-canvas"></canvas>
+            <canvas id="output-canvas"></canvas>
+        </div>
+        <div id = "measurement-div">
+            <input type="number" id="width-input" class="measure-box" placeholder="Width" disabled>
+            ✕
+            <input type="number" id="height-input" class="measure-box" placeholder="Height" disabled>
+        </div>
+        <div id="button-div">
+            <input type="file" id="upload-file" id="img" name="img" accept="image/*" 
+            onchange="displayImage(this.files)">
+            <button onclick="uploadFile()">Upload Image</button>
+            <button onclick="changeSize()" disabled id="resize-button">Resize Image</button>
+        </div>
+        <div>
+            <a id="download-link" download="resizeImage.jpg" style="display: none;">Download Image</a>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<style>
+    #upload-file{
+        display: None;
+    }
+    .measure-box{
+        width: 130px;
+    }
+    #main{
+        text-align: center;
+    }
+    #input-canvas, #output-canvas{
+        border: 1px solid black;
+    }
+    #measurement-div{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #button-div{
+        padding: 10px;
+    }
+    #button-div button{
+        margin: 10px;
+    }
+</style>
+</html>
